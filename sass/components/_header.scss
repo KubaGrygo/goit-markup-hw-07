@@ -1,0 +1,95 @@
+.header {
+  padding: 24px 0 25px;
+  border-bottom: 1px solid rgba(236, 236, 236, 1);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 93px;
+  }
+  &__nav-list {
+    display: flex;
+    gap: 46px;
+  }
+  &__logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: $primary-color;
+    text-decoration: none;
+  }
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    gap: 46px;
+  }
+  &__nav-item {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: $black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__nav-item:is(:hover, :focus) {
+    color: var(--primary-color);
+  }
+
+  &__nav-item--active {
+    color: $primary-color;
+  }
+
+  &__nav-item::after {
+    content: '';
+    background-color: transparent;
+  }
+
+  &__nav-item--active::after,
+  &__nav-item:is(:hover, :focus)::after {
+    content: '';
+    top: 45px;
+    position: absolute;
+    height: 4px;
+    display: flex;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__contacts {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  &__contacts-item {
+    font-weight: 500;
+    color: $ash;
+    text-decoration: none;
+    fill: currentColor;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__contacts-item-icon {
+    margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__contacts a:hover,
+  &__contacts a:focus {
+    color: $primary-color;
+  }
+}
